@@ -1,0 +1,31 @@
+{
+  "name": "stream-cue",
+  "version": "1.0.0",
+  "description": "Timed recurring on-screen cue cards for streamers",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac",
+    "build:linux": "electron-builder --linux"
+  },
+  "keywords": ["electron", "streaming", "teleprompter", "cue-cards"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.0.0"
+  },
+  "build": {
+    "appId": "com.streamcue.app",
+    "productName": "Stream Cue",
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**/*"
+    ],
+    "linux":  { "target": "AppImage", "category": "Utility" },
+    "mac":    { "target": "dmg" },
+    "win":    { "target": "nsis" }
+  }
+}
